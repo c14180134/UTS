@@ -11,7 +11,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ng-container *ngIf='kambing === 1'>
+    <ng-container *ngIf='kambing == 1'>
     <ion-row>
       <ion-col size="6" *ngFor="let isiFoto of globalFotoService.dataFoto; index as position">
         <ion-img [src] = "isiFoto.webviewPath"></ion-img>

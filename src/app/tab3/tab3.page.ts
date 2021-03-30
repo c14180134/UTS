@@ -11,10 +11,11 @@ import { Router,ActivatedRoute} from '@angular/router';
 export class Tab3Page {
   kambing : any
   constructor(public globalFotoService:GlobalfotoService,private  afStorage : AngularFireStorage,public router : Router,public route : ActivatedRoute) {
-    this.kambing = this.route.snapshot.paramMap.get('kambing');
+    
   }
   
   async ngOnInit(){
+    this.kambing = this.route.snapshot.paramMap.get('kambing');
     console.log(this.kambing)
     await this.globalFotoService.loadFoto();
   }
