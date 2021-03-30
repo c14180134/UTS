@@ -27,14 +27,14 @@ export class Tab2Page {
   }
 
   uploadFoto(index:number){
-    
+    console.log(index);
         const imageFilepath = `imgStorage/${this.globalFotoService.dataFoto[index].filePath}`;
         this.afStorage.upload(imageFilepath, this.globalFotoService.dataFoto[index].dataImage).then(() =>{
         this.afStorage.storage.ref().child(imageFilepath).getDownloadURL().then((url) =>{
             this.urlImageStorage.unshift(url)
         });
       });
-   
+      
   }
 
 }

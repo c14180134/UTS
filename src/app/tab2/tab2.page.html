@@ -17,7 +17,7 @@
     <ion-row>
       <ion-col size="6" *ngFor="let isiFoto of globalFotoService.dataFoto; index as position">
         <ion-img [src] = "isiFoto.webviewPath"></ion-img>
-        <ion-button></ion-button>
+        <ion-button (click)="uploadFoto(position)">UPLOAD</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
