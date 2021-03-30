@@ -3,15 +3,23 @@
     <ion-title>
       Tab 4
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 4</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ng-container *ngIf='kambing === 1'>
+    <ion-row>
+      <ion-col size="6" *ngFor="let isiFoto of globalFotoService.dataFoto; index as position">
+        <ion-img [src] = "isiFoto.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+  </ion-grid>
+
 
   <app-explore-container name="Tab 4 page"></app-explore-container>
 </ion-content>

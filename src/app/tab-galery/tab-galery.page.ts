@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireStorage} from '@angular/fire/storage'
+import { Router } from '@angular/router';
 import { GlobalfotoService } from '../services/globalfoto.service';
 
 export interface fileFoto{
@@ -14,7 +15,7 @@ export interface fileFoto{
 export class TabGaleryPage implements OnInit {
   urlImageStorage :string[] = []
   namaImage : string[] = []
-  constructor(public globalFotoService:GlobalfotoService,private  afStorage : AngularFireStorage) { }
+  constructor(public globalFotoService:GlobalfotoService,private  afStorage : AngularFireStorage,public router:Router) { }
 
   ngOnInit() {
     
@@ -22,6 +23,11 @@ export class TabGaleryPage implements OnInit {
 
   async ionViewDidEnter(){
     this.tampilkanData();
+  }
+
+  kehal4(kambing:number){
+    kambing=1;
+    this.router.navigate(['/tab3', kambing]);
   }
 
   tampilkanData(){
